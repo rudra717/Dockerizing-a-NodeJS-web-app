@@ -13,7 +13,13 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - sudo systemctl start docker
+ 
+      - sudo yum update -y
+      - sudo amazon-linux-extras install docker
+      - sudo service docker start
+      - sudo systemctl enable docker
+      - sudo usermod -a -G docker ec2-user
+      
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
