@@ -1,0 +1,9 @@
+[  {    "name": "my-app",    "image": "679536496490.dkr.ecr.us-east-1.amazonaws.com/test:latest",    "memory": 256,    "cpu": 256,    "portMappings": [      {        "containerPort": 80,        "hostPort": 80,        "protocol": "tcp"      }    ],
+    "environment": [
+      {
+        "name": "ENV_VAR_NAME",
+        "value": "ENV_VAR_VALUE"
+      }
+    ]
+  }
+]
